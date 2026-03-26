@@ -1,0 +1,62 @@
+{
+  "model_name": "MobileNetV2",
+  "trained_at": "2026-03-26T20:02:08.276366+00:00",
+  "image_size": 224,
+  "batch_size": 32,
+  "epochs_requested": 6,
+  "fine_tune_epochs_requested": 4,
+  "epochs_ran": 10,
+  "class_names": [
+    "dry",
+    "e_waste",
+    "hazardous",
+    "wet"
+  ],
+  "class_indices": {
+    "dry": 0,
+    "e_waste": 1,
+    "hazardous": 2,
+    "wet": 3
+  },
+  "dataset_distribution": {
+    "dry": 1276,
+    "e_waste": 538,
+    "hazardous": 400,
+    "wet": 661
+  },
+  "training_samples": 2300,
+  "validation_samples": 575,
+  "training_class_distribution": {
+    "dry": 1021,
+    "e_waste": 430,
+    "hazardous": 320,
+    "wet": 529
+  },
+  "validation_class_distribution": {
+    "dry": 255,
+    "e_waste": 108,
+    "hazardous": 80,
+    "wet": 132
+  },
+  "class_weights": {
+    "dry": 0.5631733594515181,
+    "e_waste": 1.3372093023255813,
+    "hazardous": 1.796875,
+    "wet": 1.0869565217391304
+  },
+  "best_val_accuracy": 0.747826099395752,
+  "final_val_accuracy": 0.747826099395752,
+  "final_val_loss": 0.7560691833496094,
+  "fine_tune_enabled": true,
+  "fine_tune_at": 110,
+  "unfrozen_layers": 29,
+  "label_smoothing": 0.1,
+  "macro_metrics": {
+    "accuracy": 0.7478260869565218,
+    "macro_precision": 0.7245308574497056,
+    "macro_recall": 0.7730020796197267,
+    "macro_f1_score": 0.7401421770863164
+  },
+  "top_misclassified_count": 100,
+  "invalid_files_skipped": []
+}

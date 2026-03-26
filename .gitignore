@@ -19,11 +19,21 @@ Thumbs.db
 # Python cache and virtualenv internals
 **/__pycache__/
 **/*.py[cod]
+**/.venv/
 backend/venv/Include/
 backend/venv/Lib/
 backend/venv/Scripts/
 backend/venv/__pycache__/
 backend/venv/pyvenv.cfg
+backend/*.log
 
 # Large local data
 ai/dataset/
+ai/artifacts/*
+!ai/artifacts/.gitkeep
+!ai/artifacts/confusion_matrix.json
+!ai/artifacts/evaluation_metrics.json
+!ai/artifacts/misclassified_samples.json
+!ai/artifacts/training_history.json
+!ai/artifacts/waste_classifier_metadata.json
+!ai/artifacts/waste_mobilenetv2.keras

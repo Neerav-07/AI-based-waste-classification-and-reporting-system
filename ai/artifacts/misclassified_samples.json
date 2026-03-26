@@ -1,0 +1,602 @@
+[
+  {
+    "filename": "dry\\plate-blue-broken-cemetery.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.9718504548072815
+  },
+  {
+    "filename": "dry\\broken-glass-separated-by-color-and-prepared-for-recycling-at-a-glass-CC88DY.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.9571171402931213
+  },
+  {
+    "filename": "hazardous\\pesticide-jugs-r.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.9506663084030151
+  },
+  {
+    "filename": "dry\\Types-of-sanitary-products-used-by-women-during-menstruation-are-a-reusable-cloth-pads.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.9323022961616516
+  },
+  {
+    "filename": "dry\\64667581ef9a05659f8efc9836c51e9a.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.9200567007064819
+  },
+  {
+    "filename": "hazardous\\AgBusPesticideCollection.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.9180903434753418
+  },
+  {
+    "filename": "dry\\cardboard-waste-paper-500x500.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.8927342891693115
+  },
+  {
+    "filename": "hazardous\\Causes_and_effects_of_soil_pollution.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "wet",
+    "confidence": 0.8861730694770813
+  },
+  {
+    "filename": "dry\\Your-Complete-Guide-to-Safely-Disposing-of-Broken-Glass-1-y8t9a48ynxihx5k9r33im8.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.8780303597450256
+  },
+  {
+    "filename": "hazardous\\deco-shine-paint-solvent-385994667-b0zph.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.8527492880821228
+  },
+  {
+    "filename": "hazardous\\aenm202102917-fig-0006-m.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "e_waste",
+    "confidence": 0.841899573802948
+  },
+  {
+    "filename": "dry\\yiu1pc0sap.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.8265130519866943
+  },
+  {
+    "filename": "dry\\shutterstock_1805501278-1.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.8233875632286072
+  },
+  {
+    "filename": "dry\\rappers-green-lawn-park-concept-cleaning-up-respecting-environment-245277060.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.8225907683372498
+  },
+  {
+    "filename": "dry\\plate-smashed-blue-glass.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.8180592060089111
+  },
+  {
+    "filename": "dry\\og-large-recycling-symbol.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.8044310808181763
+  },
+  {
+    "filename": "dry\\1-s2.0-S0160412020303494-ga1.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.7957849502563477
+  },
+  {
+    "filename": "dry\\Food-Packaging-Waste-Statistics-Understanding-the-Rise-of-Food-Packaging-Waste-Feature-Images.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.7883603572845459
+  },
+  {
+    "filename": "dry\\white-background-metal-waste-recycling-empty-crumpled-aluminum-can-120063176.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.7871761322021484
+  },
+  {
+    "filename": "dry\\paper-mailers1.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.7742348909378052
+  },
+  {
+    "filename": "dry\\Issue43.png",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.7719433903694153
+  },
+  {
+    "filename": "wet\\walking_on_egg_shells_800_wht.jpg",
+    "true_label": "wet",
+    "predicted_label": "e_waste",
+    "confidence": 0.7714884281158447
+  },
+  {
+    "filename": "dry\\Tech_English_LG_Grade8-term2_p124.png",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.7593884468078613
+  },
+  {
+    "filename": "dry\\stock-vector-paper-waste-items-paper-packaging-flat-design-illustrations-2291614661.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.7493547201156616
+  },
+  {
+    "filename": "dry\\food-packaging-tip-sheet.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.7461660504341125
+  },
+  {
+    "filename": "dry\\granby-workshop-waste-ceramics-design_dezeen_2364_sq-1.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.7419902086257935
+  },
+  {
+    "filename": "hazardous\\b1594insectisidespesticides_1.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.7410799264907837
+  },
+  {
+    "filename": "dry\\ing-takeaway-foam-lunch-boxes-single-use-food-containers-close-up-1792562215.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.7359393239021301
+  },
+  {
+    "filename": "wet\\FUR.TEA.27739890_1672739478453.webp",
+    "true_label": "wet",
+    "predicted_label": "hazardous",
+    "confidence": 0.7358028292655945
+  },
+  {
+    "filename": "dry\\1292760.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.7316556572914124
+  },
+  {
+    "filename": "wet\\3-s2.0-B978012818353300016X-f16-01-9780128183533.jpg",
+    "true_label": "wet",
+    "predicted_label": "hazardous",
+    "confidence": 0.7279485464096069
+  },
+  {
+    "filename": "dry\\waste-paper-products-in-cardboard-box-BJ8JDP.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.7265214323997498
+  },
+  {
+    "filename": "wet\\animist-donyi-polo-shrine-made-from-bamboo-feathers-and-eggshells-E4A21E.jpg",
+    "true_label": "wet",
+    "predicted_label": "e_waste",
+    "confidence": 0.7242534160614014
+  },
+  {
+    "filename": "wet\\yard-waste-in-trash.jpg",
+    "true_label": "wet",
+    "predicted_label": "hazardous",
+    "confidence": 0.7112675309181213
+  },
+  {
+    "filename": "dry\\200114-compostable-packaging-cups-utensils-plates.pla-plastic-waste-pollution-3-salad.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.7072985768318176
+  },
+  {
+    "filename": "dry\\Yummp_hk_lunchbox.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.7054374814033508
+  },
+  {
+    "filename": "wet\\71VjiXtBQ4L._AC_UF8941000_QL80_.jpg",
+    "true_label": "wet",
+    "predicted_label": "dry",
+    "confidence": 0.6972365975379944
+  },
+  {
+    "filename": "hazardous\\m4_ss10_fig10.7.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.6927937269210815
+  },
+  {
+    "filename": "dry\\empty-aluminium-drinks-cans-recycling-rostov-don-russia-172776163.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.6888845562934875
+  },
+  {
+    "filename": "dry\\metics-feminine-sanitary-supplies-soap-miscellaneous-food-cleaning-thumbnail.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.6888726949691772
+  },
+  {
+    "filename": "dry\\1665075294-can-packaging-options-white-text.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.6850523352622986
+  },
+  {
+    "filename": "dry\\p06cz75l.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6800845861434937
+  },
+  {
+    "filename": "hazardous\\Image-5-800x450.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "wet",
+    "confidence": 0.6703370213508606
+  },
+  {
+    "filename": "dry\\broken-glass-waste-and-disposal-drawing_csp79427295.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.6699737310409546
+  },
+  {
+    "filename": "dry\\Packaging_waste_v4.png",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.6587470769882202
+  },
+  {
+    "filename": "dry\\4-9.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.6538695096969604
+  },
+  {
+    "filename": "dry\\62e7c92eab11b2a6d58c592e_Empty-candy-wrappers.png",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6490961313247681
+  },
+  {
+    "filename": "dry\\img_5e755845b44fd.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.6481950879096985
+  },
+  {
+    "filename": "wet\\Engravings-on-ostrich-eggshell-fragment-Patne-western-India-early-Upper-Palaeolithic.png",
+    "true_label": "wet",
+    "predicted_label": "dry",
+    "confidence": 0.646371603012085
+  },
+  {
+    "filename": "dry\\pile-period-products.png",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.633247435092926
+  },
+  {
+    "filename": "dry\\fruits-in-plastic-bags.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6314166188240051
+  },
+  {
+    "filename": "dry\\StyrofoamContainers.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.6310354471206665
+  },
+  {
+    "filename": "dry\\List-of-bathroom-accessories-you-must-have-in-your-home-f.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6300109028816223
+  },
+  {
+    "filename": "dry\\IMG_9257.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6283882856369019
+  },
+  {
+    "filename": "dry\\Screenshot-2021-11-01-at-22.49.21.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.605715274810791
+  },
+  {
+    "filename": "dry\\elle.rue.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.6026294827461243
+  },
+  {
+    "filename": "hazardous\\batteries2.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "e_waste",
+    "confidence": 0.5973330140113831
+  },
+  {
+    "filename": "hazardous\\yellowPaint2.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "wet",
+    "confidence": 0.5966127514839172
+  },
+  {
+    "filename": "dry\\Examples-of-aluminum-items-that-are-recyclable-1.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.5848731994628906
+  },
+  {
+    "filename": "dry\\stack-of-newspapers-outdoors.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.58284991979599
+  },
+  {
+    "filename": "dry\\32.5_19d4770e-dc7a-4951-82bb-bf0030a411f7.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.5800936222076416
+  },
+  {
+    "filename": "e_waste\\Electronic-Waste-E-Waste-WEEE.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "dry",
+    "confidence": 0.5793357491493225
+  },
+  {
+    "filename": "e_waste\\ling-issue-concept-copy-space-text-damaged-held-disposal-challenge-277763587.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "dry",
+    "confidence": 0.5764975547790527
+  },
+  {
+    "filename": "e_waste\\ling-issue-concept-copy-space-text-damaged-held-disposal-challenge-277763587 - Copy.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "dry",
+    "confidence": 0.5764975547790527
+  },
+  {
+    "filename": "dry\\bowl-bottom-broken-glass-w-melted-bubbles-air-vessel-was-lying-flat-85817560.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.5749239325523376
+  },
+  {
+    "filename": "dry\\media2F31f2F31f4b7e5-1e39-42c4-a183-9d791928ee472FphpAWnYQQ.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.5731644034385681
+  },
+  {
+    "filename": "dry\\Percentage-of-diapers-in-urban-solid-waste-in-some-countries-in-North-America-Europe-and.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.5647340416908264
+  },
+  {
+    "filename": "dry\\Copy-of-Style-shot-3.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.5559265613555908
+  },
+  {
+    "filename": "hazardous\\WN_OMV_AWMO_Water_Solvent_03.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.5552671551704407
+  },
+  {
+    "filename": "dry\\waste-paper-skip-half-full-for-recycling-france-S3FCJW.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.5538694262504578
+  },
+  {
+    "filename": "hazardous\\various-tins-of-paint-solvents-stirrers-in-a-tidy-collection-on-the-E565YW.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "e_waste",
+    "confidence": 0.5529678463935852
+  },
+  {
+    "filename": "wet\\-of-the-indian-and-pacific-oceans-an-endangered-species-they-travel-t-M9AFPW.jpg",
+    "true_label": "wet",
+    "predicted_label": "e_waste",
+    "confidence": 0.5491670370101929
+  },
+  {
+    "filename": "dry\\60c9935424774f7129485c01_1623823188870.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.5488778948783875
+  },
+  {
+    "filename": "dry\\4f38n5dj.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.5461203455924988
+  },
+  {
+    "filename": "dry\\kintsugi-hero.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.5390390753746033
+  },
+  {
+    "filename": "dry\\shutterstock_1135406513_600x600.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.5340105891227722
+  },
+  {
+    "filename": "e_waste\\E-Waste-Management-in-India.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "dry",
+    "confidence": 0.5319896340370178
+  },
+  {
+    "filename": "e_waste\\E-Waste-Management-in-India - Copy.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "dry",
+    "confidence": 0.5319896340370178
+  },
+  {
+    "filename": "wet\\grass_mowing722x550-1.jpg",
+    "true_label": "wet",
+    "predicted_label": "hazardous",
+    "confidence": 0.5292810201644897
+  },
+  {
+    "filename": "e_waste\\e-waste-process - Copy.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "hazardous",
+    "confidence": 0.5284337401390076
+  },
+  {
+    "filename": "hazardous\\5350017_image_2_46.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.52424556016922
+  },
+  {
+    "filename": "wet\\easy-disposable-drip-bag-coffee-tea-bags-ground-173299335.jpg",
+    "true_label": "wet",
+    "predicted_label": "dry",
+    "confidence": 0.522080659866333
+  },
+  {
+    "filename": "dry\\mixed-paper-waste-cardboard-confidential-documents.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.5160802006721497
+  },
+  {
+    "filename": "dry\\vagina-vulva-1200x628-facebook-1200x628.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.5030695199966431
+  },
+  {
+    "filename": "hazardous\\battery-recycling2.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.49914494156837463
+  },
+  {
+    "filename": "wet\\1JqctqHKmoMeugSMxsSKhpg.png",
+    "true_label": "wet",
+    "predicted_label": "dry",
+    "confidence": 0.49898532032966614
+  },
+  {
+    "filename": "dry\\PlasticBags.png",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.4966264069080353
+  },
+  {
+    "filename": "dry\\sjb-4359-451.jpg",
+    "true_label": "dry",
+    "predicted_label": "e_waste",
+    "confidence": 0.49581506848335266
+  },
+  {
+    "filename": "hazardous\\Batteries3.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "wet",
+    "confidence": 0.49495965242385864
+  },
+  {
+    "filename": "dry\\Amita-Silvassa-Dec-2020_resize_87.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.4921785295009613
+  },
+  {
+    "filename": "dry\\1200px-Gestion_menstrual_tampon_toallitas_menstruaciC3B3n_periodicas_06.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.4879375696182251
+  },
+  {
+    "filename": "hazardous\\solvents-paints-and-adhesives.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "dry",
+    "confidence": 0.48688432574272156
+  },
+  {
+    "filename": "e_waste\\impact-of-e-waste-hero1540775416137 - Copy.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "wet",
+    "confidence": 0.48602619767189026
+  },
+  {
+    "filename": "e_waste\\impact-of-e-waste-hero1540775416137.jpg",
+    "true_label": "e_waste",
+    "predicted_label": "wet",
+    "confidence": 0.48602619767189026
+  },
+  {
+    "filename": "dry\\Beauty-in-Broken-Things-Hero.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.483457088470459
+  },
+  {
+    "filename": "dry\\63befce33e92406c3c1dac8a-diapers-size-4-144-count-pampers-pull.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.4833751320838928
+  },
+  {
+    "filename": "dry\\korken-jar-with-lid-clear-glass__1059754_pe849771_s5.jpg",
+    "true_label": "dry",
+    "predicted_label": "wet",
+    "confidence": 0.48124343156814575
+  },
+  {
+    "filename": "hazardous\\Imagen-Ecobiofor.jpg",
+    "true_label": "hazardous",
+    "predicted_label": "wet",
+    "confidence": 0.47771841287612915
+  },
+  {
+    "filename": "dry\\lain-dibuang-dipinggiran-sungai-di-Sleman-Jogja.-foto-Tommy-Apriando-768x512.jpg",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.47187134623527527
+  },
+  {
+    "filename": "dry\\personal-care.png",
+    "true_label": "dry",
+    "predicted_label": "hazardous",
+    "confidence": 0.46958476305007935
+  }
+]
