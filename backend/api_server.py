@@ -7,6 +7,11 @@ from pathlib import Path
 from threading import Lock
 from typing import Any, Literal
 from uuid import uuid4
+from databse import enginer, Base 
+import models
+from fastqpi import Depends
+from sqlalchemy.orm import Session
+from deps import get_db
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -220,6 +225,7 @@ app = FastAPI(
     title="AI-based Waste Classification and Reporting API",
     version="1.0.0",
 )
+Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
@@ -318,3 +324,7 @@ def update_report_status(report_id: str, payload: ReportStatusUpdate) -> dict[st
 @app.patch("/reports/{report_id}/status", response_model=ReportResponse)
 def update_report_status_alias(report_id: str, payload: ReportStatusUpdate) -> dict[str, Any]:
     return update_report_status_by_id(report_id, payload.status)
+
+@app.get("/test-db")
+def test_db(db: Session= Depends(get_db)):
+    return{"message": "DB connected"}
