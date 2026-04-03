@@ -60,4 +60,6 @@ export interface BackendHealth {
   checkedAt: string;
   availablePaths?: string[];
   hasProjectApi?: boolean;
+  modelReady?: boolean;
+  modelStatus?: string;
 }

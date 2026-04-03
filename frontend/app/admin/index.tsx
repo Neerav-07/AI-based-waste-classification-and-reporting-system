@@ -15,8 +15,12 @@ import { Redirect, router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function AdminDashboardScreen() {
-  const { user, logout } = useAuth();
+  const { user, logout, isLoading } = useAuth();
   const { backendHealth, reports, updateReportStatus } = useAppData();
+
+  if (isLoading) {
+    return <ScreenLayout />;
+  }
 
   if (!user || user.role !== 'admin') {
     return <Redirect href={routes.login} />;
@@ -51,8 +55,8 @@ export default function AdminDashboardScreen() {
           </View>
           <PrimaryButton
             icon={<Ionicons color={AppTheme.colors.text} name="log-out-outline" size={16} />}
-            onPress={() => {
-              logout();
+            onPress={async () => {
+              await logout();
               router.replace(routes.login);
             }}
             variant="ghost">

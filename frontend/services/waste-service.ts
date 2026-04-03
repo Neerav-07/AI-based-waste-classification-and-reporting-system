@@ -67,12 +67,12 @@ function buildWasteInfo(category: WasteCategory, payload: any): WasteInfo {
 
 export async function classifyWasteImage(imageUri: string) {
   const response = await requestWithCandidates<any>(
-    ['/classify', '/predict', '/classification', '/analyze'],
+    ['/classify/', '/classify', '/predict', '/classification', '/analyze'],
     (path) => {
       const formData = new FormData();
 
       formData.append(
-        'file',
+        'image',
         {
           uri: imageUri,
           name: `waste-${Date.now()}.jpg`,
@@ -84,14 +84,12 @@ export async function classifyWasteImage(imageUri: string) {
         method: 'POST',
         url: path,
         data: formData,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+        timeout: 60000,
       };
     }
   );
 
-  const category = normalizeWasteCategory(response?.prediction ?? response?.category);
+  const category = normalizeWasteCategory(response?.prediction ?? response?.category ?? response?.predicted_class);
   const metadata = wasteAppearance[category];
 
   return {

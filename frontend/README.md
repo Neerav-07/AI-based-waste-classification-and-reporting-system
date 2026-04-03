@@ -13,7 +13,19 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Start the app
 
    ```bash
-   npx expo start
+   npm run start
+   ```
+
+3. If you want to open it in Expo Go on a physical Android phone:
+
+   ```bash
+   npm run start:tunnel
+   ```
+
+4. Start the backend from `../backend` so the phone can reach it:
+
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 
 In the output, you'll find options to open the app in a

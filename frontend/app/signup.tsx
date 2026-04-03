@@ -1,56 +1,36 @@
 import { AppTheme } from '@/constants/app-theme';
 import { routes } from '@/constants/routes';
-import { ScreenLayout } from '@/components/app/screen-layout';
 import { PrimaryButton } from '@/components/app/primary-button';
+import { ScreenLayout } from '@/components/app/screen-layout';
+import { useAuth } from '@/providers/auth-provider';
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, router } from 'expo-router';
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Alert, ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Alert, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { useAuth } from '@/providers/auth-provider';
-
-const roleCards: {
-  title: string;
-  subtitle: string;
-  icon: keyof typeof Ionicons.glyphMap;
-  color: string;
-}[] = [
-  {
-    title: 'Field User',
-    subtitle: 'Classify waste, report issues, and track personal submissions.',
-    icon: 'person-outline',
-    color: AppTheme.colors.secondary,
-  },
-  {
-    title: 'Admin',
-    subtitle: 'Review reports, update issue status, and watch analytics.',
-    icon: 'shield-checkmark-outline',
-    color: AppTheme.colors.primary,
-  },
-];
-
-export default function LoginScreen() {
-  const { login, isLoading, user } = useAuth();
+export default function SignupScreen() {
+  const { signup, isLoading, user } = useAuth();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const canContinue = email.trim().length > 0 && password.trim().length > 0;
+  const canContinue = name.trim().length > 1 && email.trim().length > 0 && password.trim().length > 0;
 
-  async function handleContinue() {
+  async function handleSignup() {
     if (!canContinue) return;
 
     setErrorMessage('');
     setIsSubmitting(true);
     try {
-      const authenticatedUser = await login({ email, password });
+      const authenticatedUser = await signup({ name, email, password });
       router.replace(authenticatedUser.role === 'admin' ? routes.admin : routes.tabs);
     } catch (error) {
       console.error(error);
-      const message = error instanceof Error ? error.message : 'Invalid email or password. Please try again.';
+      const message = error instanceof Error ? error.message : 'Unable to create your account right now.';
       setErrorMessage(message);
-      Alert.alert('Login Failed', message);
+      Alert.alert('Signup Failed', message);
     } finally {
       setIsSubmitting(false);
     }
@@ -61,7 +41,7 @@ export default function LoginScreen() {
       <ScreenLayout>
         <View style={styles.loadingState}>
           <ActivityIndicator size="large" color={AppTheme.colors.primary} />
-          <Text style={styles.loadingText}>Checking your session...</Text>
+          <Text style={styles.loadingText}>Preparing your account...</Text>
         </View>
       </ScreenLayout>
     );
@@ -75,28 +55,27 @@ export default function LoginScreen() {
     <ScreenLayout>
       <View style={styles.hero}>
         <View style={styles.heroBadge}>
-          <Ionicons color={AppTheme.colors.white} name="leaf-outline" size={28} />
+          <Ionicons color={AppTheme.colors.white} name="person-add-outline" size={28} />
         </View>
-        <Text style={styles.heroTitle}>AI Waste Response System</Text>
+        <Text style={styles.heroTitle}>Create Your Account</Text>
         <Text style={styles.heroSubtitle}>
-          A mobile workspace for AI waste classification, complaint reporting, and civic response.
+          Sign up as a field user to classify waste, submit reports, and track your activity.
         </Text>
       </View>
 
-      <View style={styles.roleGrid}>
-        {roleCards.map((card) => (
-          <View key={card.title} style={styles.roleCard}>
-            <View style={[styles.roleIcon, { backgroundColor: `${card.color}18` }]}>
-              <Ionicons color={card.color} name={card.icon} size={24} />
-            </View>
-            <Text style={styles.roleTitle}>{card.title}</Text>
-            <Text style={styles.roleSubtitle}>{card.subtitle}</Text>
-          </View>
-        ))}
-      </View>
-
       <View style={styles.formCard}>
-        <Text style={styles.formTitle}>Sign in to continue</Text>
+        <Text style={styles.formTitle}>Get started</Text>
+
+        <View style={styles.inputGroup}>
+          <Text style={styles.label}>Full name</Text>
+          <TextInput
+            onChangeText={setName}
+            placeholder="Your name"
+            placeholderTextColor={AppTheme.colors.textMuted}
+            style={styles.input}
+            value={name}
+          />
+        </View>
 
         <View style={styles.inputGroup}>
           <Text style={styles.label}>Email</Text>
@@ -116,7 +95,7 @@ export default function LoginScreen() {
           <TextInput
             secureTextEntry
             onChangeText={setPassword}
-            placeholder="Enter your password"
+            placeholder="Create a password"
             placeholderTextColor={AppTheme.colors.textMuted}
             style={styles.input}
             value={password}
@@ -130,14 +109,14 @@ export default function LoginScreen() {
         ) : (
           <PrimaryButton
             disabled={!canContinue}
-            icon={<Ionicons color={AppTheme.colors.white} name="arrow-forward-outline" size={18} />}
-            onPress={handleContinue}>
-            Enter Dashboard
+            icon={<Ionicons color={AppTheme.colors.white} name="checkmark-circle-outline" size={18} />}
+            onPress={handleSignup}>
+            Create Account
           </PrimaryButton>
         )}
 
-        <Text onPress={() => router.push(routes.signup)} style={styles.helperText}>
-          New here? Create a field user account
+        <Text onPress={() => router.replace(routes.login)} style={styles.helperText}>
+          Already have an account? Sign in
         </Text>
       </View>
     </ScreenLayout>
@@ -172,34 +151,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     textAlign: 'center',
-  },
-  roleGrid: {
-    gap: 14,
-  },
-  roleCard: {
-    backgroundColor: AppTheme.colors.surface,
-    borderColor: AppTheme.colors.border,
-    borderRadius: AppTheme.radius.lg,
-    borderWidth: 1.5,
-    gap: 10,
-    padding: 18,
-  },
-  roleIcon: {
-    alignItems: 'center',
-    borderRadius: 16,
-    height: 46,
-    justifyContent: 'center',
-    width: 46,
-  },
-  roleTitle: {
-    color: AppTheme.colors.text,
-    fontSize: 18,
-    fontWeight: '800',
-  },
-  roleSubtitle: {
-    color: AppTheme.colors.textMuted,
-    fontSize: 14,
-    lineHeight: 21,
   },
   formCard: {
     backgroundColor: AppTheme.colors.surface,

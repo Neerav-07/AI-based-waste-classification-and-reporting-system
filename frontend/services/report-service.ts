@@ -27,9 +27,12 @@ export function normalizeReport(raw: any, fallback?: Partial<ReportDraft>): Repo
   };
 }
 
-export async function fetchReports() {
+// Add `role` parameter to fetch the right endpoints based on the logged-in user
+export async function fetchReports(role: 'user' | 'admin' = 'user') {
+  const targetPath = role === 'admin' ? '/admin/reports' : '/reports/my';
+  
   const payload = await requestWithCandidates<any[] | { reports?: any[]; data?: any[] }>(
-    ['/reports', '/complaints', '/issues'],
+    [targetPath, '/reports'], // Prioritize the exact FastAPI route
     (path) => ({
       method: 'GET',
       url: path,
@@ -41,12 +44,12 @@ export async function fetchReports() {
 }
 
 export async function createReport(payload: ReportDraft) {
-  const response = await requestWithCandidates<any>(['/reports', '/complaints', '/report'], (path) => {
+  const response = await requestWithCandidates<any>(['/reports/', '/reports'], (path) => {
     const formData = new FormData();
 
     if (payload.imageUri) {
       formData.append(
-        'image',
+        'file', // Changed from 'image' to 'file' to match standard FastAPI UploadFile
         {
           uri: payload.imageUri,
           name: `report-${Date.now()}.jpg`,
@@ -59,22 +62,6 @@ export async function createReport(payload: ReportDraft) {
     formData.append('description', payload.description);
     formData.append('location', payload.location);
     formData.append('locality', payload.locality);
-
-    if (payload.reporterName) {
-      formData.append('reporter_name', payload.reporterName);
-    }
-
-    if (payload.reporterEmail) {
-      formData.append('reporter_email', payload.reporterEmail);
-    }
-
-    if (typeof payload.latitude === 'number') {
-      formData.append('latitude', String(payload.latitude));
-    }
-
-    if (typeof payload.longitude === 'number') {
-      formData.append('longitude', String(payload.longitude));
-    }
 
     return {
       method: 'POST',
@@ -91,7 +78,7 @@ export async function createReport(payload: ReportDraft) {
 
 export async function updateReportStatusRemote(id: string, status: ReportStatus) {
   await requestWithCandidates<any>(
-    [`/reports/${id}`, `/complaints/${id}`, `/reports/${id}/status`, `/complaints/${id}/status`],
+    [`/admin/reports/${id}/status`], // Exactly matches your FastAPI admin router
     (path) => ({
       method: 'PATCH',
       url: path,
@@ -99,3 +86,4 @@ export async function updateReportStatusRemote(id: string, status: ReportStatus)
     })
   );
 }
+

@@ -10,7 +10,20 @@ Recommended backend setup from the `backend` directory:
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+For Expo Go on a physical Android phone, keep the phone and laptop on the same Wi-Fi network and start the frontend from the `frontend` directory with:
+
+```bash
+npm install
+npm run start
+```
+
+If LAN discovery is blocked on your network, use:
+
+```bash
+npm run start:tunnel
 ```
 
 ## AI Training

@@ -161,6 +161,8 @@ export function AppDataProvider({ children }: PropsWithChildren) {
           checkedAt: new Date().toISOString(),
           availablePaths: response.availablePaths,
           hasProjectApi: response.hasProjectApi,
+          modelReady: response.modelReady,
+          modelStatus: response.modelStatus,
         });
       } catch (error) {
         setBackendHealth({

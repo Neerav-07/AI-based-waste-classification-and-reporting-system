@@ -15,10 +15,14 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 const filters = ['all', 'pending', 'resolved'] as const;
 
 export default function AdminReportsScreen() {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const { backendHealth, reports, refreshReports, updateReportStatus } = useAppData();
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>('all');
   const [query, setQuery] = useState('');
+
+  if (isLoading) {
+    return <ScreenLayout />;
+  }
 
   if (!user || user.role !== 'admin') {
     return <Redirect href={routes.login} />;

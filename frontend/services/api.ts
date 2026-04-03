@@ -1,11 +1,83 @@
 import axios, { type AxiosError, type AxiosRequestConfig } from 'axios';
+import Constants from 'expo-constants';
+import * as SecureStore from 'expo-secure-store'; // Added for JWT storage
+import { Platform } from 'react-native';
 
-export const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? '';
+function extractHost(value?: string | null) {
+  if (!value) {
+    return null;
+  }
+
+  const normalized = value.replace(/^[a-z]+:\/\//i, '');
+  return normalized.split(':')[0] || null;
+}
+
+function resolveExpoHost() {
+  const expoConfigHost = extractHost((Constants.expoConfig as { hostUri?: string } | null)?.hostUri);
+  if (expoConfigHost) {
+    return expoConfigHost;
+  }
+
+  const expoGoHost = extractHost((Constants as any)?.expoGoConfig?.debuggerHost);
+  if (expoGoHost) {
+    return expoGoHost;
+  }
+
+  const manifest2Host = extractHost((Constants as any)?.manifest2?.extra?.expoClient?.hostUri);
+  if (manifest2Host) {
+    return manifest2Host;
+  }
+
+  return extractHost(Constants.linkingUri);
+}
+
+function getFallbackBaseUrl() {
+  const derivedHost = resolveExpoHost();
+
+  if (derivedHost && Platform.OS !== 'web') {
+    return `http://${derivedHost}:8000`;
+  }
+
+  if (Platform.OS === 'android') {
+    return 'http://10.0.2.2:8000';
+  }
+
+  return 'http://localhost:8000';
+}
+
+export const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? getFallbackBaseUrl();
 
 export const api = axios.create({
   baseURL: BASE_URL,
   timeout: 15000,
 });
+
+async function getStoredToken() {
+  if (Platform.OS === 'web') {
+    return localStorage.getItem('userToken');
+  }
+
+  return SecureStore.getItemAsync('userToken');
+}
+
+// --- ADDED: Axios Interceptor for JWT Auth ---
+api.interceptors.request.use(
+  async (config) => {
+    try {
+      const token = await getStoredToken();
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    } catch (error) {
+      console.error('Error fetching token from secure store', error);
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+// ---------------------------------------------
 
 interface OpenApiDocument {
   paths?: Record<string, unknown>;
@@ -87,6 +159,8 @@ export async function checkBackendHealth() {
     message,
     availablePaths,
     hasProjectApi,
+    modelReady: (response.data as any)?.model_ready,
+    modelStatus: (response.data as any)?.model_status,
   };
 }
 

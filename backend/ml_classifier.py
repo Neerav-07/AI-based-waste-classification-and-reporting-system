@@ -6,12 +6,15 @@ from io import BytesIO
 from pathlib import Path
 from threading import Lock
 
+DEPENDENCY_ERROR: str | None = None
+
 try:
     import numpy as np
     from PIL import Image, ImageFile, UnidentifiedImageError
     from tensorflow import keras
     from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-except Exception:  # pragma: no cover - optional at runtime until ML deps are installed
+except Exception as exc:  # pragma: no cover - optional at runtime until ML deps are installed
+    DEPENDENCY_ERROR = str(exc)
     np = None
     Image = None
     ImageFile = None
@@ -38,6 +41,25 @@ class TrainedPrediction:
 
 def trained_model_ready() -> bool:
     return bool(keras and np and MODEL_PATH.exists() and METADATA_PATH.exists())
+
+
+def get_model_status() -> dict[str, object]:
+    if DEPENDENCY_ERROR:
+        return {
+            "ready": False,
+            "reason": f"ML dependencies are unavailable: {DEPENDENCY_ERROR}",
+        }
+
+    if not MODEL_PATH.exists() or not METADATA_PATH.exists():
+        return {
+            "ready": False,
+            "reason": "Model artifacts are missing from ai/artifacts.",
+        }
+
+    return {
+        "ready": True,
+        "reason": "AI model is ready.",
+    }
 
 
 def load_model_bundle() -> tuple[object, dict[str, object]] | None:

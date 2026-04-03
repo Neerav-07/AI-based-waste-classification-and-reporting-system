@@ -49,8 +49,8 @@ export default function HomeScreen() {
     }
   }
 
-  function handleLogout() {
-    logout();
+  async function handleLogout() {
+    await logout();
     router.replace(routes.login);
   }
 
@@ -100,10 +100,19 @@ export default function HomeScreen() {
         </View>
       ) : null}
 
+      {backendHealth?.ok && backendHealth.modelReady === false ? (
+        <View style={styles.warningBanner}>
+          <Ionicons color={AppTheme.colors.warning} name="hardware-chip-outline" size={20} />
+          <Text style={styles.warningText}>
+            {backendHealth.modelStatus ?? 'AI model is not ready on the backend.'}
+          </Text>
+        </View>
+      ) : null}
+
       <SectionCard subtitle="Upload one waste item photo and let the AI predict its type." title="Capture">
         <ImagePickerField imageUri={imageUri} onChange={setImageUri} />
         <PrimaryButton
-          disabled={!imageUri}
+          disabled={!imageUri || backendHealth?.modelReady === false}
           icon={<Ionicons color={AppTheme.colors.white} name="sparkles-outline" size={18} />}
           loading={isClassifying}
           onPress={handleClassify}>
@@ -184,7 +193,7 @@ export default function HomeScreen() {
                 />
               }
               onPress={() => setSelectedResultIndex(index)}
-              subtitle={`${formatDate(item.createdAt)} • ${formatConfidence(item.confidence)}`}
+              subtitle={`${formatDate(item.createdAt)} | ${formatConfidence(item.confidence)}`}
               title={item.data.title}
               trailing={<Ionicons color={AppTheme.colors.textMuted} name="chevron-forward-outline" size={16} />}
             />
@@ -281,3 +290,4 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
+
